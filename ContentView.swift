@@ -1,15 +1,18 @@
 //
 //  ContentView.swift
-//  Login
+//  loi
 //
-//  Created by Bashayer  on 09/04/1444 AH.
+//  Created by Bashayer  on 05/04/1444 AH.
 //
+
 import SwiftUI
 
 struct ContentView: View {
-     @State private var mail: String = "  Email"
+    @State private var name: String = "  Name"
+    @State private var mail: String = "  Email"
+    @State private var birth: String = "  MM/DD/YYYY"
     @State private var pass: String = "  Password"
-   
+    @State private var cpass: String = "  Confirm Password"
     var body: some View {
         
        
@@ -19,36 +22,21 @@ struct ContentView: View {
     // -------------------------------------------------------------------------------------
             ZStack{
                 LinearGradient(gradient : Gradient (colors: [Color.orange, Color.purple]), startPoint : .topTrailing, endPoint: .topLeading).cornerRadius(100)
-                                   .frame(height : 400.0)
+                                   .frame(height : 250.0)
                                    
-                                   .padding(.top,-200)
+                                   .padding(.top,-90)
                                    .padding(.horizontal, -50.0)
                                Spacer()
                                
                                
-                               Text("Log In")
-                    .bold()
+                               Text("Sing up")
+                                   .bold()
                                    .padding(.top, -25.0)
-                               Text("Log in to see the world! and save the placese you visited ")
+                               Text("Get started by creating your account")
                                    .padding(.top, 30.0)
-                                  .font(.caption)
-                                   .padding(.leading , 25)
-                              Text(" and take adavntage of other features ")
-                                    .padding(.top, 60.0)
-                                        .font(.caption)
-                                   .padding(.leading , 25)
-                 
+                                   .font(.caption)
+                
             }
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
             // create fast log in
     // -------------------------------------------------------------------------------------
            
@@ -122,9 +110,6 @@ struct ContentView: View {
             .padding()
             VStack{
                 
-                
-                
-              
                 Divider()
                     .padding(.leading, 220.0)
                     .padding(.top , -2)
@@ -140,20 +125,17 @@ struct ContentView: View {
                   //  .padding(.top , 20)
                 
             }.padding()
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-                
-                // create text filed
+                // create  all oftext filed
+    // -------------------------------------------------------------------------------------
             VStack{
-                     
+                        
+                        TextField("Enter your name", text: $name)
+                            .frame(width: 290, height: 40)
+                            .textFieldStyle(.roundedBorder)
+                            .foregroundColor(Color.gray)
+                            .background(Color.white)
+                        
+
                         
                         TextField("Enter your Email", text: $mail)
                             .frame(width: 290, height: 40)
@@ -163,7 +145,11 @@ struct ContentView: View {
                        
 
                         
-                  
+                        TextField("Enter your Birtday", text: $birth)
+                            .frame(width: 290, height: 40)
+                            .textFieldStyle(.roundedBorder)
+                            .foregroundColor(Color.gray)
+                            .background(Color.white)
                        
                         
                         TextField("Enter your Password", text: $pass)
@@ -172,22 +158,20 @@ struct ContentView: View {
                             .foregroundColor(Color.gray)
                             .background(Color.white)
                         
-                    
+                        TextField("Confirm your Password", text: $cpass)
+                            .frame(width: 290, height: 40)
+                            .textFieldStyle(.roundedBorder)
+                            .foregroundColor(Color.gray)
+                            .background(Color.white)
                         
                         
                         
                     }
-                    
-
-                
-                
-                
-                
-                
-                // create congirm bouttn
+                // create congirm bouttn confirm
+ // -------------------------------------------------------------------------------------
             VStack{
                       
-                       Button("Log in ") {
+                       Button("Confirm ") {
                                           
                                       }
                        .frame(width: 100, height: 40)
@@ -199,34 +183,12 @@ struct ContentView: View {
                        
                        
                    }
-
+                // create last text and boutton
+    // -------------------------------------------------------------------------------------
             
-            VStack{
-                      
-                       Button("Forget password ") {
-                                          
-                                      }
-                       //.frame(width: 100, height: 40)
-                       
-                       .foregroundColor(Color.blue)
-                           .background(Color.white)
-                          // .overlay(
-                           //    RoundedRectangle(cornerRadius: 10)
-                            //      .stroke(Color.purple, lineWidth: 1.5))
-                       
-                       
-                   }
-
-            
-            
-            
-            
-                
-                // create last
-            Spacer()
             VStack {
               
-                Text(" Don't have an account???     ")
+                Text(" Already have an account?     ")
                     .padding(.top , 50)
                     .padding(.trailing , 30)
                 
@@ -234,7 +196,7 @@ struct ContentView: View {
             
             VStack{
                
-                Button(" Create one. ") {
+                Button("Sing in ") {
                                    
                                }
                 .bold()
@@ -243,52 +205,11 @@ struct ContentView: View {
                     .padding(.top , -32)
                     .padding(.leading, 210)
             }
-            
-            
-                
-                
-                
-                
-                
-                
-                
-                
-                
-                
-                
-                
-                
-                
             //end of big stack
     // -------------------------------------------------------------------------------------
                 
             }
-            
-            
-            
-            
-            
-            
-            
-            
-            
-    
-        
-        
-     
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-        
-            
-        
+
     }
 }
 struct ContentView_Previews: PreviewProvider {
@@ -296,4 +217,3 @@ struct ContentView_Previews: PreviewProvider {
         ContentView()
     }
 }
-
